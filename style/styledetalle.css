@@ -1,0 +1,167 @@
+/* -----Normalización----- */
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif; 
+    
+
+}
+
+/* -----NavBar----- */
+header {
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    display: flex;
+
+}
+
+.logo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9b3b3;
+
+}
+
+img {
+    height: 5vh;
+
+}
+
+nav ul {
+    width: 70%;
+    position: absolute;
+    height: 10vh;
+    background-color: #e9b3b3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 4vw;
+    font-weight: bold;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* border: 2px solid #4C4649; */
+    padding: 5px;
+    color: #4C4649;
+   
+}
+
+li {
+    list-style-type: none;
+}
+
+li a:hover {
+    background-color: #d903678c;
+    font-style : italic;
+}
+
+
+/* -----Tarjetas----- */
+
+main {
+
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #4c464944;
+    
+
+   
+}
+
+.contenedor{
+    width: 70vw;
+    height: 25vw;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1vw;
+}
+
+.conteUno{
+    width: 30vw;
+    height: 40vh;
+    border:1px solid #000;
+    background-image: url(../Img/Fiesta\ de\ disfraces1.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+.conteDos{
+    width: 30vw;
+    height: 40vh;
+    border:1px solid #000; 
+
+}
+.titulo{
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+h3{
+    font-weight: bold;
+    font-family:'Syne Mono', monospace; ;
+}
+
+.descrip{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+/*-----Footer----- */
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: #4C4649;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+
+}
+.redes{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly;
+
+}
+
+.fa-brands, .fa-square-instagram{
+    font-size: 25px;
+    color: #000;
+
+ 
+
+}
+.cohorte{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 2vw;
+    justify-content: end;
+    font-size: 20px;
+   
+}

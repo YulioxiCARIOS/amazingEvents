@@ -1,0 +1,257 @@
+/* -----Normalización----- */
+
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif; 
+    
+
+}
+
+/* -----NavBar----- */
+header {
+    width: 100vw;
+    height: 10vh;
+    position: relative;
+    display: flex;
+
+}
+
+.logo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: #e9b3b3;
+
+}
+
+img {
+    height: 5vh;
+
+}
+
+nav ul {
+    width: 70%;
+    position: absolute;
+    height: 10vh;
+    background-color: #e9b3b3;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 4vw;
+    font-weight: bold;
+    
+
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    /* border: 2px solid #4C4649; */
+    padding: 5px;
+    color: #4C4649;
+   
+
+}
+
+li {
+    list-style-type: none;
+}
+
+li a:hover {
+    background-color: #d903678c;
+    font-style : italic;
+}
+
+/* -----Segunda Barra----- */
+
+.segundaNav {
+    width: 100vw;
+    height: 15vh;
+    background-color: #4C4649;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.segundaNav a{
+    text-decoration: none;
+    color: #e9b3b3;
+    font-size: 45px;
+    font-family: 'Syne Mono', monospace;
+    
+}
+.segundaNav a:hover{
+    background-color:  #d903678c;
+    font-style : italic;
+}
+
+/* ----- Checkbox----- Y  -----Busqueda----- */
+
+.category-busqueda {
+    width: 98%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-left: 2vw;
+    background-color: #e9b3b3;
+
+}
+label{
+    font-size: 11px;
+}
+
+
+/* -----Tarjetas----- */
+
+main{
+
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9b3b3;
+    
+}
+.uno{
+    display: contents;
+    height: 80vh;
+  
+  
+}
+.cards{
+    border: 2px solid #00000034;
+    border-radius: 20px;
+    margin: 3px;
+    
+}
+
+.cardUno{
+    width: 18vw;
+    height: 40vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #eee9eb;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.img{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.imagenUno{
+    background-size: cover;
+    border-radius: 20px;
+}
+
+
+.title{
+
+    height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    font-family: 'Syne Mono', monospace;
+    font-weight: bold;
+
+    
+
+}
+.descrip{
+    height: 10vh;
+    font-size: 14px;
+    text-align: center;
+   
+
+}
+
+.price{
+   
+    width: 18vw;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    font-weight: bold;
+   
+}
+.price-ver{
+    width: 18vw;
+}
+.verMas{
+    width: 18vw;
+    display: flex;
+    justify-content: end;
+
+}
+
+.but{
+    width: 6vw;
+    height: 4vh;
+    box-shadow: -2px -2px 3px 3px rgba(15, 11, 11, 0.479);
+}
+
+
+button:hover {
+   background-color: #4C4649;
+   
+}
+
+/*-----Footer----- */
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: #4C4649;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+
+}
+.redes{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly;
+
+}
+
+.fa-brands, .fa-square-instagram{
+    font-size: 25px;
+    color: #000;
+
+ 
+
+}
+.cohorte{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 2vw;
+    justify-content: end;
+    font-size: 20px;
+   
+}

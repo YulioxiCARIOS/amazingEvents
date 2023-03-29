@@ -1,0 +1,164 @@
+/* -----Normalización----- */
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif; 
+}
+
+/* -----NavBar----- */
+header {
+    width: 100vw !important;
+    height: 10vh !important;
+    position: relative !important;
+    display: flex !important;
+
+}
+
+.logo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: #e9b3b3;
+
+}
+
+img {
+    height: 5vh;
+
+}
+nav{
+    width: 70% !important;
+    background-color: #e9b3b3 !important;
+    height: 10vh !important;
+    box-shadow: 0 0px 0px 0, 0 0px 0px 0px, 0 0px 0px 0 !important;
+}
+
+nav ul {
+    width: 70% !important;
+    position: absolute;
+    height: 10vh;
+    background-color: #e9b3b3 !important;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 4vw;
+    font-weight: bold;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 5px;
+    color: #4C4649;
+   
+}
+
+li {
+    list-style-type: none;
+}
+
+li a:hover {
+    background-color: #d903678c !important;
+    font-style : italic !important;
+   
+}
+
+/* -----Tarjetas----- */
+
+main {
+
+    width: 100vw;
+    height: 80vh;
+    background-color: #4c464944;   
+ 
+}
+.row{
+    width: 65vw;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-bottom: 0px !important;
+    
+}
+.prefix{
+    color:#4C4649!important;
+   
+}
+
+.active{
+    color: #4C4649 !important;
+   
+}
+label .fa-solid{
+    width: 2vw;
+}
+input{
+   
+    width: 20vw;
+}
+textarea{
+  
+    width: 20%;
+
+}
+button{
+   box-shadow: 3px 3px 5px 3px#13141388 !important;
+}
+
+/*-----Footer----- */
+
+footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: #4C4649;
+    display: flex !important;
+    flex-direction: row;
+    justify-content: space-evenly; 
+    align-items: center;
+
+}
+.redes{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center; 
+    justify-content: space-evenly;
+
+}
+
+.fa-brands, .fa-square-instagram{
+    font-size: 25px;
+    color: #000;
+
+}
+.cohorte{
+    width: 48%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-right: 2vw;
+    justify-content: end;
+    font-size: 20px;
+   
+}
+{
+
+
+}
+.waves-effect{
+    color: #000 !important;
+}
+.btn{
+    color: antiquewhite !important;
+    background-color: #D80269 !important;
+}
