@@ -7,7 +7,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
 }
 
 /* -----NavBar----- */
@@ -24,7 +24,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-   background-color: #e9b3b3;
+    background-color: #e9b3b3;
 
 }
 
@@ -32,7 +32,8 @@ img {
     height: 5vh;
 
 }
-nav{
+
+nav {
     width: 70% !important;
     background-color: #e9b3b3 !important;
     height: 10vh !important;
@@ -43,7 +44,7 @@ nav{
 
 nav ul {
     width: 70% !important;
-    position: absolute !important;
+    position: absolute;
     height: 10vh;
     background-color: #e9b3b3 !important;
     display: flex;
@@ -51,14 +52,14 @@ nav ul {
     align-items: center;
     column-gap: 4vw;
     font-weight: bold;
-    
+
 }
 
 nav ul li a {
     text-decoration: none;
     padding: 5px;
     color: #4C4649;
-   
+
 }
 
 li {
@@ -67,9 +68,9 @@ li {
 
 li a:hover {
     background-color: #d903678c !important;
-    font-style : italic !important;
+    font-style: italic !important;
     height: 100% !important;
-   
+
 }
 
 /* -----Tarjetas----- */
@@ -78,10 +79,11 @@ main {
 
     width: 100vw;
     height: 80vh;
-    background-color: #4c464944;   
- 
+    background-color: #4c464944;
+
 }
-.row{
+
+.row {
     width: 65vw;
     height: 80vh;
     display: flex;
@@ -91,33 +93,36 @@ main {
     margin-left: 0px !important;
     margin-right: 0px !important;
     margin-bottom: 0px !important;
-    
-}
-.prefix{
-    color:#4C4649!important;
-   
+
 }
 
-.active{
+.prefix {
     color: #4C4649 !important;
-  
+
 }
 
-label .fa-solid{
+.active {
+    color: #4C4649 !important;
+
+}
+
+label .fa-solid {
     width: 2vw;
 }
+
 /* ---------------------------OK-Para cambiar los colores de las barras del formulario--------------------------------------- */
-  .input-field input[type=text].validate:focus {
-    border-bottom: 1px solid #d903678c  !important;
-    box-shadow: 0 1px 0 0 #d903678c  !important;
-  }
-  .input-field input[type=tel].validate:focus {
-    border-bottom: 1px solid #d903678c  !important;
-    box-shadow: 0 1px 0 0 #d903678c  !important;
-  }
-  
-button{
-   box-shadow: 3px 3px 5px 3px#13141388 !important;
+.input-field input[type=text].validate:focus {
+    border-bottom: 1px solid #d903678c !important;
+    box-shadow: 0 1px 0 0 #d903678c !important;
+}
+
+.input-field input[type=tel].validate:focus {
+    border-bottom: 1px solid #d903678c !important;
+    box-shadow: 0 1px 0 0 #d903678c !important;
+}
+
+button {
+    box-shadow: 3px 3px 5px 3px#13141388 !important;
 }
 
 /*-----Footer----- */
@@ -128,25 +133,28 @@ footer {
     background-color: #4C4649;
     display: flex !important;
     flex-direction: row;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     align-items: center;
 
 }
-.redes{
+
+.redes {
     width: 50%;
     height: 100%;
     display: flex;
-    align-items: center; 
+    align-items: center;
     justify-content: space-evenly;
 
 }
 
-.fa-brands, .fa-square-instagram{
+.fa-brands,
+.fa-square-instagram {
     font-size: 25px;
     color: #000;
 
 }
-.cohorte{
+
+.cohorte {
     width: 48%;
     height: 100%;
     display: flex;
@@ -154,16 +162,15 @@ footer {
     padding-right: 2vw;
     justify-content: end;
     font-size: 20px;
-   
-}
-{
-
 
 }
-.waves-effect{
+
+
+.waves-effect {
     color: #000 !important;
 }
-.btn{
+
+.btn {
     color: antiquewhite !important;
     background-color: #D80269 !important;
 }
