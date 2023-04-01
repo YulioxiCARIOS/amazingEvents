@@ -64,6 +64,7 @@ li {
 li a:hover {
     background-color: #d903678c;
     font-style : italic;
+    height: 100% !important;
 }
 
 
@@ -86,7 +87,7 @@ main {
 .contenedor{
     width: 70vw;
     height: 25vw;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,8 +97,8 @@ main {
 .conteUno{
     width: 30vw;
     height: 40vh;
-    border:1px solid #000;
-    background-image: url(../Img/Fiesta\ de\ disfraces1.jpg);
+    /* border:1px solid #000; */
+    /* background-image: url(../Img/Fiesta\ de\ disfraces1.jpg); */
     background-size:cover;
     background-repeat: no-repeat;
 }
@@ -105,14 +106,15 @@ main {
 .conteDos{
     width: 30vw;
     height: 40vh;
-    border:1px solid #000; 
+    /* border:1px solid #000;  */
 
 }
 .titulo{
-    height: 15vh;
+    height: 13vh;
+    font-size: 20px;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
 }
 
 h3{
@@ -121,10 +123,15 @@ h3{
 }
 
 .descrip{
-    display: flex;
+    /* display: contents; */
     justify-content: center;
     text-align: center;
+    font-size: 15px;
 
+
+}
+i{
+    padding: 4px;
 }
 
 /*-----Footer----- */

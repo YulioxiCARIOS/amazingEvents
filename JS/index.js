@@ -53,7 +53,7 @@ function display(array) {
                     <div class="descrip">${array[i].description} </div>
                     <div class="price">
                         <div class="price-ver">Price :${array[i].price}</div>
-                        <div class="verMas"><button class="but"><p>Ver Mas.</p>
+                        <div class="verMas" ><button class="but"><a href="./pages/detalle.html?id=${array[i].id}">Ver Mas.</a>
                             </button></div>
                     </div>
                 </div>
@@ -63,4 +63,23 @@ function display(array) {
 
     document.getElementById("todosLosEventos").innerHTML = html;
 }
-imprimir("Home")
+
+console.log(location.search)
+var time = location.search.split("?time=");
+
+console.log(time[1])
+
+
+    switch (time[1]) {
+        case "Past":
+            imprimir("Past")
+            break;
+        case "Upcoming":
+            imprimir("Upcoming")
+            break;
+        default:
+            imprimir("Home")
+    }
+
+
+
