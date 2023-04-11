@@ -39,26 +39,27 @@ nav {
     height: 10vh !important;
     box-shadow: 0 0px 0px 0, 0 0px 0px 0px, 0 0px 0px 0 !important;
     line-height: 20px !important;
-    position: sticky;
+
+
 }
 
 nav ul {
     width: 70% !important;
-    position: absolute;
-    height: 10vh;
+    position: absolute !important;
+    height: 10vh !important;
     background-color: #e9b3b3 !important;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    column-gap: 4vw;
-    font-weight: bold;
+    display: flex !important;
+    justify-content: space-evenly !important;
+    align-items: center !important;
+    column-gap: 4vw !important;
+    font-weight: bold !important;
 
 }
 
 nav ul li a {
     text-decoration: none;
     padding: 5px;
-    color: #4C4649;
+    color: #4C4649 !important;
 
 }
 
@@ -73,19 +74,65 @@ li a:hover {
 
 }
 
+/* -----Segunda Barra----- */
+
+.segundaNav {
+    width: 100vw;
+    height: 15vh;
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.fa-chevron-left,
+.fa-chevron-right {
+
+    font-size: 40px;
+
+}
+
+p {
+    text-decoration: none;
+    color: #d90367bd;
+    font-size: 45px;
+    font-family: 'Syne Mono', monospace;
+}
+
+.nombrePages {
+    text-decoration: none;
+    color: #e9b3b3;
+    font-size: 45px;
+    font-family: 'Syne Mono', monospace;
+
+}
+
+.nombrePages a:hover {
+    background-color: #d903678c;
+    font-style: italic;
+}
+
+.left-right:-webkit-any-link {
+    color: -webkit-link !important;
+    cursor: pointer !important;
+    text-decoration: underline !important;
+
+}
+
 /* -----Tarjetas----- */
 
 main {
 
     width: 100vw;
-    height: 80vh;
+    height: 65vh;
     background-color: #4c464944;
 
 }
 
 .row {
     width: 65vw;
-    height: 80vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

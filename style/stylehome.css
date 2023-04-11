@@ -19,6 +19,7 @@ header {
     height: 10vh;
     position: relative;
     display: flex;
+    
 
 }
 
@@ -90,6 +91,7 @@ li a:hover {
 font-size: 30px;
 
 }
+
 p{
     text-decoration: none;
     color: #d90367bd;
