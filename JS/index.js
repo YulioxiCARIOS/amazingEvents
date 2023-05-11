@@ -8,7 +8,7 @@ var eventosPasados = [];
 var eventosFuturos = [];
 let checkedCheckBoxes = [];
 let search = " "
-let input_Search = document.getElementById("inputSearch")
+//let input_Search = document.getElementById("inputSearch")
 
 
 // -------------------API--------------------
@@ -190,6 +190,8 @@ function changePage(i) {
             console.log(eventosPasados)
             break;
         case 3: imprimirFormulario()
+        inputSearch.style.display="none"
+        checkCategories.style.display = "none"
             formulario.style.display = "flex"
             todosLosEventos.style.display = "none"
             estadisticas.style.display = "none"
@@ -197,7 +199,8 @@ function changePage(i) {
             console.log("Estoy En Formulario")
             break;
         default: imprimirStats()
-
+        inputSearch.style.display="none"
+        checkCategories.style.display = "none"
             estadisticas.style.display = "flex"
             formulario.style.display = "none"
             document.getElementById("name").innerHTML = buttonNavegacion[i]
