@@ -7,13 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Iconos -->
     <script src="https://kit.fontawesome.com/10c64ff641.js" crossorigin="anonymous"></script>
+
     <!-- Favicon -->
     <link rel="shortcut icon " href="./Logo/favicon.png">
+
     <!-- Style Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"rel="stylesheet">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Roboto:wght@300&display=swap"
@@ -22,9 +24,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap" rel="stylesheet">
+
     <!-- Style Css -->
-   <link rel="stylesheet" href="./style/stylehome.css">
-   <link rel="stylesheet" href="./style/stylecontacto.css">
+    <link rel="stylesheet" href="./style/stylehome.css">
+
+    <!-- Libreria Iconos -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <title>Amazing Events-Home</title>
 </head>
@@ -47,27 +53,28 @@
         </nav>
     </header>
     <div class="segundaNav">
-        <i class="fa-solid fa-chevron-left" id="butIz">  </i>
-        
+        <i class="fa-solid fa-chevron-left" id="butIz"> </i>
+
         <p class="nombrePages" id="name">Home</p>
 
         <i class="fa-solid fa-chevron-right" id="butDer"></i>
     </div>
-    <div class="busq">
-        <div class="category-busqueda">
-            <label><input type="checkbox"> Feria de Comida</label>
-            <label><input type="checkbox"> Salida al museo</label>
-            <label><input type="checkbox"> Fiesta de Disfraces</label>
-            <label><input type="checkbox"> Concierto de Música</label>
-            <label><input type="checkbox"> Carrera</label>
-            <label><input type="checkbox"> Intercambio de Libros</label>
-            <label><input type="checkbox"> Vamos al Cine</label>
-            <div class="busq"><input type="search" placeholder="Buscar">
-                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
-        </div>
+
+    <div class="category-busqueda" id="checkCategories">
+
+        <!-- ----JS----- -->
     </div>
+
+    <div class="busq" id="inputSearch"><input class="busqued" type="text" placeholder="Busca tu evento preferido"></div>
+        <!-- ----JS----- -->
+        <!-- <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+
+    
+
+    <div id="estadisticas"></div>
+    <div id="formulario"></div>
     <main id="todosLosEventos">
+
         <!-- JS -->
     </main>
 
@@ -80,9 +87,10 @@
         <div class="cohorte">Acnur Dic-2022/23</div>
     </footer>
     </div>
-        <!-- JS -->
-        <script src="./JS/AmazingEvents.js"></script>
-        <script src="./JS/index.js"></script>
+    <!-- JS -->
+    <script src="./JS/AmazingEvents.js"></script>
+    <script src="./JS/index.js"></script>
+
 
 </body>
 

@@ -1,6 +1,25 @@
-const eventos = datosAmazing.eventos; 
+let eventos
 
 console.log(location.search)
+
+async function getData() {
+    let datosApi
+    await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
+        .then(response => response.json())
+        .then(json => datosApi = json)
+
+    eventos = datosApi.eventos
+    fechaBase = datosApi.fechaActual
+
+      console.log(datosApi)
+    detalles()
+}
+getData()
+
+
+
+function detalles(){
+
 var id = location.search.split("?id=").filter(Number)
 
 console.log(id)
@@ -9,13 +28,13 @@ var selectId= id[0]
 
 var eventoDetalle = []
 
+
 for(var i = 0; i < eventos.length;i++){
     if(eventos[i].id == selectId){
         eventoDetalle.push(eventos[i])
     }
 }
-console.log(eventos)
-console.log(eventoDetalle)
+
 
 var card = document.getElementById("detalle")
 
@@ -24,9 +43,11 @@ var asis_esti = eventoDetalle[0].assistance?"Asistencia" : "Estimación"
 // console.log(evento[0].assistance?true:false)
 
 // Template String Html junto con Js
+
 card.innerHTML = `
 <div class="contenedor">
-<div class="conteUno" style = "background-image: url('../Img/${eventoDetalle[0].image}')">
+<img class="conteUno" src="${eventoDetalle[0].image}" alt="" srcset="">
+
     
 </div>
 <div class="conteDos">
@@ -44,3 +65,4 @@ card.innerHTML = `
 </div>
 
 </div>`
+}
