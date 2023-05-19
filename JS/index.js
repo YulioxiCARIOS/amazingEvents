@@ -7,11 +7,11 @@ var searchContainer = document.getElementById("searchContainer")
 var eventosPasados = [];
 var eventosFuturos = [];
 let checkedCheckBoxes = [];
-let search = " "
-//let input_Search = document.getElementById("inputSearch")
+let search = ""
+let input_Search = document.getElementById("inputSearch")
+let estadisticas = document.getElementById("estadisticas")
 
-
-// -------------------API--------------------
+//  -------------------API--------------------
 async function getData() {
     let datosApi
     await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
@@ -29,8 +29,9 @@ async function getData() {
             eventosPasados.push(eventos[i])
         }
     }
-    //  console.log(datosApi)
-    rutas()
+    console.log(datosApi)
+
+    page()
 }
 getData()
 
@@ -60,6 +61,7 @@ function imprimir(id) {
     console.log(id)
     switch (id) {
         case "Upcoming":
+            inputSearch.style.display = "flex"
             console.log(eventosFuturos)
             checkCategories.style.display = "flex"
             todosLosEventos.style.display = "flex"
@@ -68,10 +70,12 @@ function imprimir(id) {
             display(eventosFuturos)
             eventsCategories(eventosFuturos)
             arrayAFiltrar = eventosFuturos
+            
 
             break;
         case "Past":
             console.log(eventosPasados)
+            inputSearch.style.display = "flex"
             checkCategories.style.display = "flex"
             todosLosEventos.style.display = "flex"
             estadisticas.style.display = "none"
@@ -79,28 +83,34 @@ function imprimir(id) {
             display(eventosPasados)
             eventsCategories(eventosPasados)
             arrayAFiltrar = eventosPasados
+           
 
             break;
         case "Contact":
+            inputSearch.style.display = "none"
             let form = document.getElementById("formulario")
             form.addEventListener("submit", function (event) { actionForm(event) })
             checkCategories.style.display = "none"
             todosLosEventos.style.display = "none"
             estadisticas.style.display = "none"
             formulario.style.display = "flex"
-            display(imprimirFormulario())
+            imprimirFormulario()
+           
 
             break;
         case "Stats":
-
+            inicioEstadisticas()
+            inputSearch.style.display = "none"
             checkCategories.style.display = "none"
             todosLosEventos.style.display = "none"
             formulario.style.display = "none"
             estadisticas.style.display = "flex"
-            display(imprimirStats())
+            imprimirStats()
 
-
+            break;
         default:
+            
+            inputSearch.style.display = "flex"
             console.log(eventos)
             checkCategories.style.display = "flex"
             todosLosEventos.style.display = "flex"
@@ -110,7 +120,7 @@ function imprimir(id) {
             eventsCategories(eventos)
             arrayAFiltrar = eventos
 
-
+            break;
 
 
     }
@@ -140,11 +150,9 @@ function display(array) {
 }
 
 //console.log(location.search)
-function rutas() {
+function page() {
     var time = location.search.split("?time=");
-
-    //console.log(time[1])
-
+    console.log(time[1])
     switch (time[1]) {
         case "Past":
             imprimir("Past")
@@ -170,41 +178,57 @@ function changePage(i) {
     console.log(i)
     switch (i) {
         case 0: display(eventos)
+            inputSearch.style.display = "flex"
             document.getElementById("name").innerHTML = buttonNavegacion[i]
             console.log(eventos)
             checkCategories.style.display = "flex"
             todosLosEventos.style.display = "flex"
             estadisticas.style.display = "none"
             formulario.style.display = "none"
+            inicioEstadisticas().style.display="none"
+
             break;
+
         case 1: display(eventosFuturos)
+            inputSearch.style.display = "flex"
             document.getElementById("name").innerHTML = buttonNavegacion[i]
             console.log(eventosFuturos)
+            inicioEstadisticas().style.display="none"
             break;
+
         case 2: display(eventosPasados)
+            inputSearch.style.display = "flex"
             checkCategories.style.display = "flex"
             todosLosEventos.style.display = "flex"
             estadisticas.style.display = "none"
             formulario.style.display = "none"
             document.getElementById("name").innerHTML = buttonNavegacion[i]
             console.log(eventosPasados)
+            inicioEstadisticas().style.display="none"
             break;
+
         case 3: imprimirFormulario()
-        inputSearch.style.display="none"
-        checkCategories.style.display = "none"
+            inputSearch.style.display = "none"
+            checkCategories.style.display = "none"
             formulario.style.display = "flex"
             todosLosEventos.style.display = "none"
             estadisticas.style.display = "none"
             document.getElementById("name").innerHTML = buttonNavegacion[i]
             console.log("Estoy En Formulario")
+            inicioEstadisticas().style.display="none"
             break;
+
         default: imprimirStats()
-        inputSearch.style.display="none"
-        checkCategories.style.display = "none"
+           
+            todosLosEventos.style.display = "none"
+            inputSearch.style.display = "none"
+            checkCategories.style.display = "none"
             estadisticas.style.display = "flex"
             formulario.style.display = "none"
             document.getElementById("name").innerHTML = buttonNavegacion[i]
             console.log("Estoy En Stats")
+            inicioEstadisticas().style.display="flex"
+
     }
 }
 
@@ -247,7 +271,46 @@ function imprimirFormulario() {
 
 function imprimirStats() {
     document.getElementById("estadisticas").innerHTML = `
-    <h1> Aqui va el contenido</h1>
+    
+    <div id="estadisticas">
+    <table>
+        <tr class="color">
+          <th colspan="3">Estadísticas de Eventos</th>
+        </tr>
+        <tr class="titulo">
+          <th>Evento con Mayor Porcentaje de Asistencia</th>
+          <th>Evento con Menor Porcentaje de Asistencia</th>
+          <th>Evento de Mayor Capacidad</th>
+        </tr>
+        <tr id="mayoresYmenores">
+
+        </tr>
+      </table>  
+      <table id="Futuros">
+
+        <tr class="color">
+          <th colspan="3">Estadisticas de Eventos Futuros por Categoría</th>
+        </tr>
+        <tr class="titulo">
+          <th>Categorías</th>
+          <th>Estimacion de Ingresos</th>
+          <th>Asistencia Estimada</th>
+        </tr>
+ 
+      </table>  
+
+      <table id="Pasados">
+        <tr class="color">
+            <th colspan="3">Estadisticas de Eventos Pasados por Categoría</th>
+        </tr>
+        <tr class="titulo">
+          <th>Categorías</th>
+          <th>Ingresos</th>
+          <th>Asistencia Estimada</th>
+        </tr>
+
+      </table>
+</div>
     `
 
 }
@@ -309,18 +372,18 @@ inputSearch.addEventListener("keyup", function (evento) { capturaEvento(evento) 
 function capturaEvento(evento) {
     var datoInput = evento.target.value
     // var datoSinEspacio = datoInput.trim().toLowerCase()
-    var search = datoInput.trim().toLowerCase()
+    search = datoInput.trim().toLowerCase()
 
     filtrosCombinados()
 
     //console.log(datoSinEspacio)
-    var filtrado = arrayAFiltrar.filter(evento => evento.name.toLowerCase().includes(search))
-    if (filtrado.length === 0) {
-        nombreEventos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
-    }
-    else {
-        display(filtrado)
-    }
+    // var filtrado = arrayAFiltrar.filter(evento => evento.name.toLowerCase().includes(search))
+    // if (filtrado.length === 0) {
+    //     nombreEventos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
+    // }
+    // else {
+    //     display(filtrado)
+    // }
 
 
 }
@@ -352,17 +415,17 @@ function capturaEvento(evento) {
 
 function eventsCategories(array) {
     let categories = array.map(evento => evento.category)
-    //console.log(categories)
+    console.log(categories)
 
     // Para filtrar si tengo categorias repetidas y para la creacion de checkbox lo necesito solo 1 vez
 
     let unica = new Set(categories) // new Set Me devuelve un objeto con los datos unicos, asi esten repetidos.
-    //console.log(unica)
+    console.log(unica)
 
     // Aparto los datos no repetidos
 
     let lastCategories = [...unica]
-    // console.log(lastCategories)
+    console.log(lastCategories)
 
     let categoriasEventos = ""
     lastCategories.map(category =>  //Evitamos que se repitan datos filtramos
@@ -374,13 +437,14 @@ function eventsCategories(array) {
     document.getElementById("checkCategories").innerHTML = categoriasEventos
 
     checkboxListener()
+
 }
 
 function checkboxListener() {
     //ESCUCHA Y GUARDADO DE CHECKBOX CHECKED
     // Por un selectorAll capturo las etiquetas input de tipo checkbox
     var checkboxes = document.querySelectorAll("input[type=checkbox]");
-    // console.log(checkboxes);
+    console.log(checkboxes);
     // creo un array vacio para poder guardar los datos de los checkbox con condicion checked true
 
 
@@ -403,24 +467,24 @@ function checkboxListener() {
 
                 }
 
-
             }
-
+            console.log(checkedCheckBoxes)
+            filtrosCombinados()
             // FILTRAR LOS EVENTOS EN FUNCION DE LAS CATEGORIAS CHEQUEADAS
 
 
 
-            filtrosCombinados()
+            // filtrosCombinados()
 
-            var eventosPorCategoria = []
+            // var eventosPorCategoria = []
 
-            checkedCheckBoxes.map(category => {
+            // checkedCheckBoxes.map(category => {
 
-                let test = arrayAFiltrar.filter(evento => evento.category === category)
-                eventosPorCategoria.push(...test)
+            //     let test = arrayAFiltrar.filter(evento => evento.category === category)
+            //     eventosPorCategoria.push(...test)
 
-            })
-            display(eventosPorCategoria)
+            // })
+            // display(eventosPorCategoria)
 
         });
 
@@ -429,30 +493,34 @@ function checkboxListener() {
 
 
 function filtrosCombinados() {
-
+    console.log(checkedCheckBoxes)
+    console.log(search)
     var filtrado = []
+
     if (search !== "" && checkedCheckBoxes.length > 0) {
 
         checkedCheckBoxes.map(category => filtrado.push(...arrayAFiltrar.filter(evento =>
             evento.name.toLowerCase().includes(search) && evento.category === category)
         ))
 
-        display(...filtrado)
+        // display(...filtrado)
 
     } else if (search !== "" && checkedCheckBoxes.length === 0) {
         filtrado = arrayAFiltrar.filter(evento => evento.name.toLowerCase().includes(search))
 
-        display(...filtrado)
+        // display(...filtrado)
 
     } else if (search === "" && checkedCheckBoxes.length > 0) {
-        filtrado.push(arrayAFiltrar.filter(evento => evento.category === category))
-
-        display(...filtrado)
+        checkedCheckBoxes.map(category =>
+            filtrado.push(...arrayAFiltrar.filter(evento => evento.category === category))
+        )
+        // display(...filtrado)
 
     } else {
-        display(arrayAFiltrar)
+        filtrado = arrayAFiltrar
+        // display(arrayAFiltrar)
     }
-
+    filtrado.length > 0 ? display(filtrado) : nombreEventos.innerHTML = `<h1 class="ceroResult" >No se encontraron eventos para tu busqueda </h1>`
 
 
 }
