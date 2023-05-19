@@ -8,8 +8,7 @@
 body {
     width: 100vw;
     height: 100vh;
-    font-family: 'Roboto', sans-serif; 
-    
+    font-family: 'Roboto', sans-serif;
 
 }
 
@@ -37,7 +36,7 @@ img {
 }
 
 nav ul {
-    color:#d903678c;
+    color: #d903678c;
     width: 70%;
     position: absolute;
     height: 10vh;
@@ -47,7 +46,7 @@ nav ul {
     align-items: center;
     column-gap: 4vw;
     font-weight: bold;
-    
+
 }
 
 nav ul li a {
@@ -63,7 +62,7 @@ li {
 li a:hover {
     background-color: #d903678c;
     font-style: italic;
-   
+
 }
 
 
@@ -77,38 +76,36 @@ main {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-   
-    
 
-   
+
+
+
 }
 
-.contenedor{
-    
+.contenedor {
+
     height: 25vw;
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 1vw;
 }
 
-.conteUno{
+.conteUno {
     width: 30vw;
     height: 40vh;
-    /* border:1px solid #000; */
-    /* background-image: url(../Img/Fiesta\ de\ disfraces1.jpg); */
-    background-size:cover;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
-.conteDos{
+.conteDos {
     width: 30vw;
     height: 40vh;
-    /* border:1px solid #000;  */
+
 
 }
-.titulo{
+
+.titulo {
     height: 13vh;
     font-size: 20px;
     display: flex;
@@ -116,20 +113,21 @@ main {
     align-items: center;
 }
 
-h3{
+h3 {
     font-weight: bold;
-    font-family:'Syne Mono', monospace; ;
+    font-family: 'Syne Mono', monospace;
+    ;
 }
 
-.descrip{
-    /* display: contents; */
+.descrip {
     justify-content: center;
     text-align: center;
     font-size: 15px;
 
 
 }
-i{
+
+i {
     padding: 4px;
 }
 
@@ -141,27 +139,27 @@ footer {
     background-color: #4C4649;
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly; 
+    justify-content: space-evenly;
     align-items: center;
-
 }
-.redes{
+
+.redes {
     width: 50%;
     height: 100%;
     display: flex;
-    align-items: center; 
-    justify-content: space-evenly;
-
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 3vh;
+    margin-left: 2vh;
 }
 
-.fa-brands, .fa-square-instagram{
+.fa-brands,
+.fa-square-instagram {
     font-size: 25px;
     color: #000;
-
- 
-
 }
-.cohorte{
+
+.cohorte {
     width: 48%;
     height: 100%;
     display: flex;
@@ -169,14 +167,16 @@ footer {
     padding-right: 2vw;
     justify-content: end;
     font-size: 20px;
-   
+
 }
-/* RESPONSIVE */
+
+/*--------------------------------------------- RESPONSIVE------------------------------------------------------ */
 @media screen and (min-width:1361px) {
-    .titulo{
+    .titulo {
         font-size: 30px;
     }
-    .descrip{
+
+    .descrip {
         font-size: 20px;
         line-height: 4vh;
     }
@@ -186,30 +186,34 @@ footer {
 
 @media screen and (min-width:640px) and (max-width:1279px) {
 
-   nav ul li a{
-    font-size: 10px;
-   }
+    nav ul li a {
+        font-size: 10px;
+    }
 
-.titulo{
-  font-size: 15px;
-}
-.descrip{
-    font-size: 12px;
-}
+    .titulo {
+        font-size: 15px;
+    }
+
+    .descrip {
+        font-size: 12px;
+    }
 }
 
 @media screen and (max-width:390px) {
 
-    main{
+    main {
         height: 85vh;
     }
-    .titulo{
+
+    .titulo {
         font-size: 25px;
     }
-    #detalle{
+
+    #detalle {
         display: flex;
         flex-direction: column;
     }
+
     .logo {
         width: 100vw;
     }
@@ -230,28 +234,33 @@ footer {
     .segundaNav {
         height: 10vh;
     }
+
     label {
         font-size: 10px;
     }
-    .contenedor{
+
+    .contenedor {
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-    .conteUno{
+
+    .conteUno {
         width: 70vw;
         height: 50vh;
         margin-top: 10vh;
     }
-.conteDos{
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-   
-}
-.descrip{
-    font-size: 21px;
-    line-height: 5vh;
-}
+
+    .conteDos {
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .descrip {
+        font-size: 21px;
+        line-height: 5vh;
+    }
 
 }

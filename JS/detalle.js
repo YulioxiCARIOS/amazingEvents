@@ -1,7 +1,4 @@
-let eventos
-
-console.log(location.search)
-
+//  -------------------ME TRAIGO DATA DE LA API--------------------
 async function getData() {
     let datosApi
     await fetch("https://amd-amazingevents-api.onrender.com/api/eventos")
@@ -16,18 +13,10 @@ async function getData() {
 }
 getData()
 
-
-
 function detalles(){
-
 var id = location.search.split("?id=").filter(Number)
-
-console.log(id)
-
 var selectId= id[0]
-
 var eventoDetalle = []
-
 
 for(var i = 0; i < eventos.length;i++){
     if(eventos[i].id == selectId){
@@ -35,14 +24,10 @@ for(var i = 0; i < eventos.length;i++){
     }
 }
 
-
 var card = document.getElementById("detalle")
 
 // Ternario
 var asis_esti = eventoDetalle[0].assistance?"Asistencia" : "Estimación"
-// console.log(evento[0].assistance?true:false)
-
-// Template String Html junto con Js
 
 card.innerHTML = `
 <div class="contenedor">
@@ -65,4 +50,5 @@ card.innerHTML = `
 </div>
 
 </div>`
+
 }

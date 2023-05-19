@@ -1,16 +1,12 @@
 async function inicioEstadisticas() {
-    console.log(eventos)
-
     var categoria = []
 
-    var unique = eventos.map(evento => evento.category)// obtenemos categorias unicas
+    // obtenemos categorias unicas
+    var unique = eventos.map(evento => evento.category)
     const quitoCateRepetidas = new Set(unique)
     categoria = [...quitoCateRepetidas]
-
-    console.log(categoria)
-
-
-    var porCategoria = [] //Agruppamos los eventos por categoria
+    //Agruppamos los eventos por categoria
+    var porCategoria = []
 
     categoria.forEach(categoria => {
 
@@ -21,9 +17,8 @@ async function inicioEstadisticas() {
             }
         )
     });
-    console.log(porCategoria)
-    //Obtenemos datos de ingresos o estimaciones por categoria
 
+    //Obtenemos datos de ingresos o estimaciones por categoria
     var ingresoYasistencia = []
     porCategoria.map(datos => {
         ingresoYasistencia.push({
@@ -37,8 +32,6 @@ async function inicioEstadisticas() {
         })
 
     })
-
-    console.log(ingresoYasistencia)
 
     ingresoYasistencia.forEach(categoria => {
 
@@ -62,8 +55,6 @@ async function inicioEstadisticas() {
         }
         categoria.porcentajeDeAsistencia = ((totalAsistencia * 100) / totalCapacidadPasados).toFixed(2) + " %"
         categoria.porcentajeDeEstimacion = ((totalAsistenciaEstimada * 100) / totalCapacidadFuturos).toFixed(2) + " %"
-        categoria.nuevaProp = "Test"// creo una nueva categoria
-
 
         //Calculo el total de ingresos (PASADOS)
         let totalIngreso = 0
@@ -89,10 +80,6 @@ async function inicioEstadisticas() {
     eventosPasados.map(evento => {
         evento.porcentajeDeAsistencia = evento.assistance * 100 / evento.capacity//Creo la propiedad, porcentaje de asistencia dentro del objeto de evento
     })//creo una propiedad calculando el porcentaje
-    console.log(eventosPasados)
-
-
-
 
     let estimacionEventos = []
 
@@ -105,7 +92,6 @@ async function inicioEstadisticas() {
     let mayor = Math.max(...asistenciaEventos) //Busco el evento con mayor asistencia
 
     let eventoMayor = eventos.filter(evento => evento.porcentajeDeAsistencia === mayor)//Busco mediante un filtro los datos del evento con mayor porcentaje asistencia === al mayor
-    console.log(eventoMayor)
 
     //Busco el evento de menor asistencio con math.max
     let menor = Math.min(...asistenciaEventos)
@@ -113,23 +99,11 @@ async function inicioEstadisticas() {
     let eventoMenor = eventos.filter(evento => evento.porcentajeDeAsistencia === menor)// busco evento con menor porcentaje de asistencia
     console.log(eventoMenor)
 
-
     //Busco evento con mayor capacidad Ascendente
     let mayorCapacidad = eventos.sort((a, b) => { return a.capacity - b.capacity })
-    console.log(mayorCapacidad)
+
     //Busco evento con mayor capacidad descendente
     let menorCapacidad = eventos.sort((a, b) => { return b.capacity - a.capacity })
-    console.log(menorCapacidad)
-
-
-    //     console.log(mayor)
-
-
-    //     console.log(menor)
-    //     console.log(estimacionEventos)
-    //     console.log(asistenciaEventos)
-    //     console.log(ingresoYasistencia)
-
 
 
     //Genero datos en tablas por porcentajes
@@ -150,24 +124,17 @@ async function inicioEstadisticas() {
 
 
     //Generar datos de los eventos futuros
-    console.log("FUTUROS", eventosFuturos)
-    console.log("PASADOS", eventosPasados)
-
     var tablaFuturos = document.getElementById("Futuros")
-let ordenarFuturos = []
-ordenarFuturos.push(...ingresoYasistencia.sort((a,b)=>{
-    return b.estimacionIngreso-a.estimacionIngreso
-}))
+    let ordenarFuturos = []
+    ordenarFuturos.push(...ingresoYasistencia.sort((a, b) => {
+        return b.estimacionIngreso - a.estimacionIngreso
+    }))
 
+    ordenarFuturos.map(evento => {
+        if (evento.estimacionIngresos > 0) {
 
-
-ordenarFuturos.map(evento =>{
-            if (evento.estimacionIngresos > 0) {
-
-                tablaFuturos.innerHTML +=
-        
-
-    `  
+            tablaFuturos.innerHTML +=
+                `  
     <tr>
       <td>${evento.categoria}</td>
       <td>${evento.estimacionIngresos}</td>
@@ -175,39 +142,36 @@ ordenarFuturos.map(evento =>{
     </tr>
     `
 
-    }
+        }
 
-})
+    })
 
-        //Generar datos de los eventos Pasados
-    
-        var tablaPasados = document.getElementById("Pasados")
+    //Generar datos de los eventos Pasados
 
-        let ordenarPasados=[]
-        ordenarPasados.push(...ingresoYasistencia.sort((a,b)=>{
-            return b.ingresos - a.ingresos
-        }))
-    
-        ordenarPasados.map(evento=>{
-            if (evento.ingresos > 0) {
-           
+    var tablaPasados = document.getElementById("Pasados")
+
+    let ordenarPasados = []
+    ordenarPasados.push(...ingresoYasistencia.sort((a, b) => {
+        return b.ingresos - a.ingresos
+    }))
+
+    ordenarPasados.map(evento => {
+        if (evento.ingresos > 0) {
+
             tablaPasados.innerHTML +=
-        `  
+                `  
         <tr>
           <td>${evento.categoria}</td>
           <td>${evento.ingresos}</td>
           <td>${(evento.porcentajeDeAsistencia)}</td>
         </tr>
         `
-            }
+        }
 
-        })
-    
+    })
+
 
 }
-
-
-
 
 inicioEstadisticas()
 
