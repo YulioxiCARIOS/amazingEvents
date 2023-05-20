@@ -8,7 +8,6 @@ async function getData() {
     eventos = datosApi.eventos
     fechaBase = datosApi.fechaActual
 
-      console.log(datosApi)
     detalles()
 }
 getData()

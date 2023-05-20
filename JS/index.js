@@ -28,7 +28,7 @@ async function getData() {
             eventosPasados.push(eventos[i])
         }
     }
-    console.log(datosApi)
+
 
     page()
 }
@@ -49,7 +49,6 @@ for (var i = 0; i < buttonNav.length; i++) { //Recorro todos los elementos con u
 }
 
 function imprimir(id) {
-    console.log(id)
     switch (id) {
         case "Upcoming":
             document.getElementById("name").innerHTML = "Upcoming Events"
@@ -105,7 +104,6 @@ function imprimir(id) {
         default:
             document.getElementById("name").innerHTML = "Home"
             inputSearch.style.display = "flex"
-            console.log(eventos)
             checkCategories.style.display = "flex"
             todosLosEventos.style.display = "flex"
             estadisticas.style.display = "none"
@@ -145,7 +143,7 @@ function display(array) {
 
 function page() {
     var time = location.search.split("?time=");
-    console.log(time[1])
+    
     switch (time[1]) {
         case "Past":
             imprimir("Past")
